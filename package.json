@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "advanced scss course",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass ./sass/main.scss ./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mi-Ski/Natours.git"
+  },
+  "author": "Mi-Ski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mi-Ski/Natours/issues"
+  },
+  "homepage": "https://github.com/Mi-Ski/Natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
