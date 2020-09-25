@@ -1,0 +1,19 @@
+/* parent's width is the base of % based calculations (excluding fonts) */
+/* em (font): parent's computed font size, em (length): current element's font size. rem: size based on the root element's font size*/
+/* BEM: .block__element--modifier */
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;  
+   box-sizing: inherit;
+}
+
+/* overwriting the root font size to default 1rem to 10px (10/16) while still allowing user to change it from accessibility settings */
+html {
+   font-size: 62.5%;
+}
+
+body {
+   box-sizing: border-box;
+}

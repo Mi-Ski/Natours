@@ -5,23 +5,30 @@
     "[Gruvbox - Dark Mode]": {
       "editor.selectionBackground": "#0400ff"
     },
+
     "[Darcula - Dark Mode]": {
       "editor.selectionBackground": "#ff00c8b9"
     },
+
     "[Oceanic Next (dimmed bg)]": {
       "editor.background": "#181818",
-      "statusBar.background": "#00000000"
-
+      "statusBar.background": "#00000000",
+      "editorLineNumber.foreground": "#aa2b6b",
+      "file"
     },
+
     "[OS X Flat Dark]": {
       "editor.selectionBackground": "#2e89ff7a"
     },
+
     "[Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷]": {
       "editorCursor.foreground": "#ffffff"
     },
+
     "[Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩]": {
-      "editorCursor.foreground": "#ffffff"
+      "editorCursor.foreground": "#ffffff",
     },
+
     "[Default Dark+]": {
       "editor.background": "#181818",
       "statusBar.background": "#000000"
