@@ -2,6 +2,170 @@
 /* em (font): parent's computed font size, em (length): current element's font size. rem: size based on the root element's font size*/
 /* BEM: .block__element--modifier */
 /* 7-1 css folder architecture */
+/* Basic reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* overwriting the root font size to default it to 10px (10/16) while still allowing user to change it from accessibility settings */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* line height 1.7 = line will be 1.7 times bigger than the p#fffefined line */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* ensures that the top of the image stays at the top of its container */
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* text-align: center    because display: blocks are treated as text */
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 7rem;
+  /* fixes occasional animation glitches on some browsers */
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.heading-primary--main {
+  /* display: block = element takes up 100% width of the parent */
+  display: block;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 1.7rem;
+  /* the same as    animation: moveInLeft 3s ease-out */
+  -webkit-animation-name: moveInLeft;
+          animation-name: moveInLeft;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 2s; */
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5rem;
+  /* the same as    animation: moveInRight 3s ease-out*/
+  -webkit-animation-name: moveInRight;
+          animation-name: moveInRight;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  /* position relative so it's the element btn::after references */
+  position: relative;
+}
+
+.btn:hover {
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  /* box-shadow. 1) X offset 2) Y offset 3) blur radius */
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  -webkit-transform: scaleX(1.4) scaleY(1.8);
+          transform: scaleX(1.4) scaleY(1.8);
+  opacity: 0;
+}
+
+.btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  /* width and height 100% so it's the same size as the Btn parent element */
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn--animated {
+  /* 4th argument: animation delay */
+  -webkit-animation: moveInBottom 0.7s ease-out 0.7s;
+          animation: moveInBottom 0.7s ease-out 0.7s;
+  /* animation-fill-mode: backwards   auto applies styles from the 0% keyframe at the start */
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -18,6 +182,7 @@
             transform: translate(0);
   }
 }
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -93,170 +258,5 @@
     -webkit-transform: translate(0);
             transform: translate(0);
   }
-}
-
-/* Basic reset */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-/* overwriting the root font size to default it to 10px (10/16) while still allowing user to change it from accessibility settings */
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* line height 1.7 = line will be 1.7 times bigger than the predefined line */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.header {
-  height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), color-stop(rgba(40, 180, 133, 0.8)), to(url(../img/hero.jpg)));
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8), url(../img/hero.jpg));
-  background-size: cover;
-  /* ensures that the top of the image stays at the top of its container */
-  background-position: top;
-  position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  /* text-align: center    because display: blocks are treated as text */
-  text-align: center;
-}
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 7rem;
-  /* fixes occasional animation glitches on some browsers */
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.heading-primary--main {
-  /* display: block = element takes up 100% width of the parent */
-  display: block;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: 1.7rem;
-  /* the same as    animation: moveInLeft 3s ease-out */
-  -webkit-animation-name: moveInLeft;
-          animation-name: moveInLeft;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  /* animation-iteration-count: 3; */
-  /* animation-delay: 2s; */
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.5rem;
-  /* the same as    animation: moveInRight 3s ease-out*/
-  -webkit-animation-name: moveInRight;
-          animation-name: moveInRight;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
-}
-
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  /* position relative so it's the element btn::after references */
-  position: relative;
-}
-
-.btn:hover {
-  -webkit-transform: translateY(-0.3rem);
-          transform: translateY(-0.3rem);
-  /* box-shadow. 1) X offset 2) Y offset 3) blur radius */
-  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  /* width and height 100% so it's the same size as the Btn parent element */
-  width: 100%;
-  height: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-.btn--white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  -webkit-transform: scaleX(1.4) scaleY(1.8);
-          transform: scaleX(1.4) scaleY(1.8);
-  opacity: 0;
-}
-
-.btn--animated {
-  /* 4th argument: animation delay */
-  -webkit-animation: moveInBottom 0.7s ease-out 0.7s;
-          animation: moveInBottom 0.7s ease-out 0.7s;
-  /* animation-fill-mode: backwards   auto applies styles from the 0% keyframe at the start */
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
 }
 /*# sourceMappingURL=main.css.map */
