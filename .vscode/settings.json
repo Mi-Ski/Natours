@@ -13,8 +13,7 @@
     "[Oceanic Next (dimmed bg)]": {
       "editor.background": "#181818",
       "statusBar.background": "#00000000",
-      "editorLineNumber.foreground": "#aa2b6b",
-      "file"
+      "editorLineNumber.foreground": "#59ff99"
     },
 
     "[OS X Flat Dark]": {
@@ -26,7 +25,7 @@
     },
 
     "[Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩]": {
-      "editorCursor.foreground": "#ffffff",
+      "editorCursor.foreground": "#ffffff"
     },
 
     "[Default Dark+]": {
