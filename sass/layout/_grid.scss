@@ -1,7 +1,7 @@
 .row {
   max-width: $grid-width;
-  background-color: #eee;
   margin: 0 auto;
+  color: red; 
 
   // :not(x)  = everything except the x element
   &:not(:last-child) {
@@ -12,7 +12,6 @@
 
   // selects all elements with class starting with "col-"   *start $end
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
