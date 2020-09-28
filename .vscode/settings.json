@@ -12,7 +12,7 @@
 
     "[Oceanic Next (dimmed bg)]": {
       "editor.background": "#181818",
-      "statusBar.background": "#00000000",
+      "statusBar.background": "#000000",
       "editorLineNumber.foreground": "#59ff99"
     },
 
