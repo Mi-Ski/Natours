@@ -11,7 +11,7 @@
     },
 
     "[Oceanic Next (dimmed bg)]": {
-      "editor.background": "#181818",
+      "editor.background": "#1b1b1b",
       "statusBar.background": "#000000",
       "editorLineNumber.foreground": "#59ff99"
     },
@@ -25,7 +25,8 @@
     },
 
     "[Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩]": {
-      "editorCursor.foreground": "#ffffff"
+      "editorCursor.foreground": "#ffffff",
+      "editorLineNumber.foreground": "#59ff99"
     },
 
     "[Default Dark+]": {
@@ -33,6 +34,7 @@
       "statusBar.background": "#000000"
     }
   },
+  "editor.lineNumbers": "relative",
 
   "editor.tokenColorCustomizations": {
     "[NotepadPlusPlus Remixed Theme]": {

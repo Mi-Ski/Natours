@@ -170,6 +170,7 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   display: inline-block;
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
@@ -181,6 +182,12 @@ body {
   -webkit-transform: skewY(2deg) skewX(13deg) scale(1.07);
           transform: skewY(2deg) skewX(13deg) scale(1.07);
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .u-center-text {
