@@ -1,9 +1,15 @@
 @mixin clearfix {
-    // appending a pseudo element after the element to clear the floats
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
 
+@mixin grid {
+	&:not(:last-child) {
+		margin-right: $gutter;
+	}
+	float: left;
+	background-color: rgb(255, 201, 242);
 }
