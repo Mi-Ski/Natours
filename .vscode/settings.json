@@ -29,6 +29,12 @@
       "editorLineNumber.foreground": "#59ff99"
     },
 
+    "[Monokai Pro]": {
+      "editorLineNumber.foreground": "#59ff99",
+      "editorLineNumber.activeForeground": "#e9a425",
+      "editor.background": "#1b1b1b",
+    },
+
     "[Default Dark+]": {
       "editor.background": "#181818",
       "statusBar.background": "#000000"
